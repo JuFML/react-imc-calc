@@ -27,7 +27,7 @@ The IMC Calculator is a project created to calculate a person's IMC based on it'
 The project was developed using the following technologies
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS Modules
 - JavaScript
 - Mobile-first workflow
 - ReactJS
