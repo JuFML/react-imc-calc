@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import style from './App.module.css';
 import logoimg from './assets/powered.png'
+import { calcIMC } from './helpers/imc'
 
 function App() {
   const [heightField, setHeightField] = useState(0)
@@ -13,10 +14,13 @@ function App() {
     setWeightField(Number(e.target.value))
   }
 
-  const calcIMC = () => {
-    return (weightField / (heightField * heightField)).toFixed(2)
+  const handleClick = () => {
+    if(weightField && heightField) {
+      calcIMC(weightField, heightField)
+      return
+    }
+    alert("Você precisa preencher todo os campos")
   }
-  console.log(calcIMC())
 
 
   return (
@@ -42,7 +46,7 @@ function App() {
             value={weightField === 0 ? '' : weightField}
             onChange={(e) => handleChangeWeight(e)} >              
           </input>
-          <button className={style.leftSide__button}>Calcular</button>
+          <button className={style.leftSide__button} onClick={handleClick}>Calcular</button>
         </div>
         <div className={style.container__rightSide}>direito</div>
       </section>
