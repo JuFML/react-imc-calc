@@ -1,0 +1,30 @@
+.grid__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.grid__icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid__title {
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.grid__paragraph {
+    font-size: 12px;
+    margin-top: 14px;
+}
