@@ -1,26 +1,35 @@
 import { useState } from 'react';
 import style from './App.module.css';
 import logoimg from './assets/powered.png'
+import leftArrowBack from './assets/leftarrow.png'
 import { calcIMC, levels } from './helpers/imc'
 import GridItem from './components/GridItem/GridItem';
 
 function App() {
   const [heightField, setHeightField] = useState(0)
   const [weightField, setWeightField] = useState(0)
+  const [levelToShow, setlevelToShow] = useState(null)
 
   const handleChangeHeight = (e) => {
-    setHeightField(Number(e.target.value))
+    setHeightField(parseFloat(e.target.value))
   }
   const handleChangeWeight = (e) => {
-    setWeightField(Number(e.target.value))
+    setWeightField(parseFloat(e.target.value))
   }
 
   const handleClick = () => {
+    console.log(weightField, heightField)
     if(weightField && heightField) {
-      calcIMC(weightField, heightField)
+      setlevelToShow(calcIMC(weightField, heightField))
       return
     }
     alert("Você precisa preencher todo os campos")
+  }
+
+  const handleBackArrow = () => {
+    setlevelToShow(null)
+    setHeightField(0)
+    setWeightField(0)
   }
 
 
@@ -50,11 +59,22 @@ function App() {
           <button className={style.leftSide__button} onClick={handleClick}>Calcular</button>
         </div>
         <div className={style.container__rightSide}>
-          <div className={style.rightSide__grid}>
+          {!levelToShow &&
+            <div className={style.rightSide__grid}>
             {levels.map((level, index) => (
               <GridItem key={index} item={level}/>              
             ))}
-          </div>
+            </div>
+          }
+          {levelToShow &&
+            <div className={style.rightSide__big}>
+              <div className={style.rightSide__leftarrow} onClick={handleBackArrow}>
+                <img src={leftArrowBack} alt="" width="25px"/>
+              </div>            
+              <GridItem item={levelToShow}/>
+            </div>
+          }
+          
         </div>
       </section>
     </div>

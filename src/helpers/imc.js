@@ -9,10 +9,12 @@ export function calcIMC(weightField, heightField) {
 
     const imc = (weightField / (heightField * heightField)).toFixed(2)
 
-    levels.forEach(level => {
-        if(imc >= level.imc[0] && imc <= level.imc[1]) {
-            level.yourImc = imc
-            console.log(level) 
+    for(let i = 0; i < levels.length; i++) {
+        if(imc >= levels[i].imc[0] && imc <= levels[i].imc[1]) {
+            let newLevel = {...levels[i]}
+            
+            newLevel.yourImc = imc
+            return newLevel
         }
-    })
+    }
 }

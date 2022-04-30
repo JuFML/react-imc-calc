@@ -55,7 +55,7 @@ body{
 }
 
 .leftSide__button:hover {
-  opacity: .8;
+  background-color: #1a5c74;
 }
 
 
@@ -68,4 +68,28 @@ body{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+
+.rightSide__big {
+  flex: 1;
+  position: relative;
+}
+
+.rightSide__leftarrow {
+  position: absolute;
+  left: -35px;
+  top: 145px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #227C9D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease .3;
+}
+
+.rightSide__leftarrow:hover {
+  background-color: #1a5c74;
 }

@@ -10,6 +10,10 @@ function GridItem({item}) {
             </div>
             <div className={style.grid__title}>{item.title}</div>
             <p className={style.grid__paragraph}>IMC está entre {item.imc[0]} e {item.imc[1]}</p>
+            {item.yourImc > 0 &&
+                <p>Seu IMC é de {item.yourImc} kg/m2</p>
+            
+            }
         </div>
     )
 }
