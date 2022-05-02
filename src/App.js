@@ -18,7 +18,6 @@ function App() {
   }
 
   const handleClick = () => {
-    console.log(weightField, heightField)
     if(weightField && heightField) {
       setlevelToShow(calcIMC(weightField, heightField))
       return
@@ -47,16 +46,20 @@ function App() {
             type="number"
             placeholder="Digite a sua altura. Ex: 1.5 (em metros)"
             value={heightField === 0 ? '' : heightField}
-            onChange={(e) => handleChangeHeight(e)} >              
+            onChange={(e) => handleChangeHeight(e)} 
+            disabled={levelToShow ? true : false}>              
           </input>
           <input 
             className={style.leftSide__input}
             type="number"
             placeholder="Digite o seu peso. Ex: 75.3 (em Kg)"
             value={weightField === 0 ? '' : weightField}
-            onChange={(e) => handleChangeWeight(e)} >              
+            onChange={(e) => handleChangeWeight(e)} 
+            disabled={levelToShow ? true : false} >              
           </input>
-          <button className={style.leftSide__button} onClick={handleClick}>Calcular</button>
+          <button className={style.leftSide__button} 
+            onClick={handleClick} 
+            disabled={levelToShow ? true : false}>Calcular</button>
         </div>
         <div className={style.container__rightSide}>
           {!levelToShow &&
