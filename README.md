@@ -7,7 +7,7 @@
   </h1>
 
 <h3 align="center">
-    <a href="#">Access demo page</a>
+    <a href="https://imc-calc-jfml.netlify.app/">Access demo page</a>
 <h3 >
 
 # Index
