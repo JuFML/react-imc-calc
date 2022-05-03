@@ -1,14 +1,14 @@
 <h1 align="center">
-    IMC Calculator - UNDER DEVELOPMENT
+    IMC Calculator
 </h1>
 
-<!-- <h1 align="center">
-<img width="800" src="src/img/presentation.PNG" alt="My cool logo"/>
+<h1 align="center">
+<img width="800" src="src/assets/img/presentation.PNG" alt="My cool logo"/>
   </h1>
 
 <h3 align="center">
     <a href="#">Access demo page</a>
-<h3 > -->
+<h3 >
 
 # Index
 
